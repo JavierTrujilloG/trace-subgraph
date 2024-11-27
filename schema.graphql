@@ -1,5 +1,8 @@
-type ExampleEntity @entity {
-  id: Bytes!
-  count: BigInt!
-  offerID: BigInt! # uint256
+type Transaction @entity {
+  id: ID!                # Unique identifier (transaction hash)
+  from: Bytes!           # Address that initiated the transaction
+  to: Bytes!             # Contract address or recipient
+  origin: Bytes          # Original address that started the transaction
+  blockNumber: BigInt!   # Block number of the transaction
+  timestamp: BigInt!     # Timestamp of the block containing the transaction
 }
